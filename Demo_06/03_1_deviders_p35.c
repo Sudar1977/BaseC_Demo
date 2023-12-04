@@ -1,24 +1,23 @@
 #include <stdio.h>
 
-void rec(int a,int b)
+void deviders(int n,int devider)
 {
-    if(a==1)
-        return;
-    for(;;)
+    if(n>1)
     {
-        if(a%b==0)
+        if(n%devider==0)
         {
-            printf("%d ",b);
-            rec(a/b,b);
-            return;
+            printf("%d ",devider);
+            deviders(n/devider,devider);
         }
-        b++;
+        else
+            deviders(n,devider+1);
     }
 }
+
 int main()
 {
 int a;
     scanf("%d",&a);
-    rec(a,2);
+    deviders(a,2);
     return 0;
 }
